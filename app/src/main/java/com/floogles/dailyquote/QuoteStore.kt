@@ -15,11 +15,41 @@ object QuoteStore {
 
     private const val PREFS = "quotes_prefs"
     private const val KEY_QUOTES = "quotes_json"
+    private const val KEY_SEEDED = "seeded"
+
+    /**
+     * Quotes added the very first time the app runs, so it isn't empty on day
+     * one. They're ordinary quotes — you can edit or delete any of them, and
+     * they are never re-added once the initial seed has happened.
+     */
+    private val STARTER_QUOTES = listOf(
+        "The only way to do great work is to love what you do." to "Steve Jobs",
+        "In the middle of difficulty lies opportunity." to "Albert Einstein",
+        "It always seems impossible until it's done." to "Nelson Mandela",
+        "Whether you think you can or you think you can't, you're right." to "Henry Ford",
+        "The best way to predict the future is to create it." to "Peter Drucker",
+        "Do what you can, with what you have, where you are." to "Theodore Roosevelt",
+        "Happiness is not something ready made. It comes from your own actions." to "Dalai Lama",
+        "Fall seven times, stand up eight." to "Japanese proverb"
+    )
 
     private fun prefs(context: Context) =
         context.getSharedPreferences(PREFS, Context.MODE_PRIVATE)
 
+    private fun ensureSeeded(context: Context) {
+        val p = prefs(context)
+        if (p.getBoolean(KEY_SEEDED, false)) return
+        if (p.getString(KEY_QUOTES, null) == null) {
+            val seeded = STARTER_QUOTES.map { (text, author) ->
+                Quote(UUID.randomUUID().toString(), text, author)
+            }
+            saveAll(context, seeded)
+        }
+        p.edit().putBoolean(KEY_SEEDED, true).apply()
+    }
+
     fun getAll(context: Context): MutableList<Quote> {
+        ensureSeeded(context)
         val raw = prefs(context).getString(KEY_QUOTES, null) ?: return mutableListOf()
         val list = mutableListOf<Quote>()
         val arr = JSONArray(raw)

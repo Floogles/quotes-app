@@ -24,6 +24,9 @@ The APK is built for you automatically by GitHub Actions.
 
 ## Using it
 
+The app comes with a handful of starter quotes so it isn't empty on day one —
+you can edit or delete any of them.
+
 - **Add quote** button → type the quote and (optionally) an author → **Save**.
 - Tap any quote in the list to edit it; the trash icon deletes it.
 - Add the **widget**: long-press your home screen → **Widgets** → find
