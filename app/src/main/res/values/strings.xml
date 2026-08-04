@@ -31,4 +31,12 @@
     <string name="channel_description">Your daily quote notification</string>
 
     <string name="delete_content_description">Delete quote</string>
+
+    <string name="export_quotes">Export / back up quotes</string>
+    <string name="import_quotes">Import quotes</string>
+    <string name="export_success">Quotes backed up</string>
+    <string name="export_failed">Couldn\'t save the backup</string>
+    <string name="import_failed">Couldn\'t read that file</string>
+    <string name="import_none">No new quotes to import</string>
+    <string name="export_filename">daily-quotes-backup.json</string>
 </resources>

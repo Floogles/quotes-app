@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <plurals name="import_success">
+        <item quantity="one">Imported %d quote</item>
+        <item quantity="other">Imported %d quotes</item>
+    </plurals>
+</resources>
