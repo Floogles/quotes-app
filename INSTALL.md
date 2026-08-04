@@ -32,6 +32,31 @@ you can edit or delete any of them.
 - Add the **widget**: long-press your home screen → **Widgets** → find
   **Daily Quote** → drag it onto the screen.
 
+Each day's quote is drawn from a shuffled "deck": every quote is shown once, in
+a random order, before any of them repeats. New quotes you add are mixed into
+the current deck so they show up soon.
+
+## Backing up / restoring your quotes
+
+Use the **⋮ menu** (top-right):
+
+- **Export / back up quotes** → saves all your quotes to a `.json` file
+  (choose a location like Downloads or Google Drive).
+- **Import quotes** → pick a previously exported `.json` file to add its quotes
+  back in. Importing *merges* — it won't create duplicates, so it's safe to run
+  more than once.
+
+## Updating to a new version
+
+From version 1.1 onward the app is signed with a fixed key, so you can install a
+newer APK **right over the top** of the existing app — your quotes are kept
+automatically. Just download the new `daily-quote-apk` and tap it to install.
+
+> **One-time note:** the very first 1.1 install may report a signature mismatch
+> with an older build and refuse to install over it. If that happens, use
+> **Export** first (if your current version has the ⋮ menu), then uninstall,
+> install 1.1, and **Import**. After that, future updates are seamless.
+
 ## Building it yourself (optional)
 
 If you have Android Studio, just open this folder and press Run. The project

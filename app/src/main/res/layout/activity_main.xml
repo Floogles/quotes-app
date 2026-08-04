@@ -5,7 +5,18 @@
     android:layout_height="match_parent"
     android:orientation="vertical"
     android:background="@color/background"
-    android:padding="16dp">
+    android:paddingStart="16dp"
+    android:paddingEnd="16dp"
+    android:paddingBottom="16dp">
+
+    <com.google.android.material.appbar.MaterialToolbar
+        android:id="@+id/toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="-8dp"
+        android:layout_marginEnd="-8dp"
+        app:title="@string/app_name"
+        app:titleTextColor="@color/text_primary" />
 
     <com.google.android.material.card.MaterialCardView
         android:layout_width="match_parent"
